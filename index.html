@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library Management Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    
+    body {
+  background-image: url("https://i.pinimg.com/564x/9f/f7/e9/9ff7e9243505be4401b6249fd082debb.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+    .container {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      text-align: center;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+    
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from submitting
+
+      // Get the entered username and password
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // You can perform additional validation here if needed
+
+      // Example: Check if the username is "admin" and the password is "password"
+      if (username === "admin" && password === "password") {
+        window.location.href = "listindex.html";
+        // Redirect to the home page or perform any other desired action
+      } else {
+        alert("Invalid username or password. Please try again.");
+        // Clear the input fields
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+        // Set focus back to the username field
+        document.getElementById("username").focus();
+      }
+    });
+  </script>
+</body>
+</html>
